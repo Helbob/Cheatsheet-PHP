@@ -437,3 +437,15 @@ $_SESSION['user_id'] = 1;
 We are using `$_SESSION` here to say that the `user_id = 1`. The `user_id` is something that we have in a database and we use it also in another file called `sign-up.php`
 
 ## Working with databases
+
+When we create databases we use phpmyadmin. It is MySQL/MariaDB (It's the same).
+
+Our database contains a table with different columns. These coulmns could be anything, such as id, name, phone number etc.
+
+In this case we have a column called `user_id`, this has the type `SERIAL`, which means it can go up to a very large number, which you will never realistically get to.
+
+That is one of the reasons we use the `SERIAL` type, but also because every number will be unique. If you delete whatever data that has the `id = 1`, you will never get another with the `id = 1`, it will automatically go to `id = 2`.
+
+There are many different types that you can use for each column, and it's important to use the right one.
+
+If you are ever in doubt, about which one to use, you can always hover them in phpmyadmin and an explanation will be shown.
