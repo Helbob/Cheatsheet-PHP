@@ -410,3 +410,30 @@ get('/', 'views/index');
 What we do here is that we get our index file from our views folder.
 
 In other words, we say that by default ( `127.0.0.1:8888` ), it should go to the folder views and take the file `index.php` and display that.
+
+## Superglobals
+
+We have used superglobals before. We have used `$_GET`, `$_POST ` which both are superglobals.
+
+But now to introduce the superglobals `$_SESSION`.
+
+We have our file called `login.php` and this is what it looks like:
+
+```
+<?php
+ini_set('display_errors', 1);
+
+require_once __DIR__. '/_.php';
+
+// We start the engine
+session_start();
+
+// Engine is started elsewhere, where we get our 'user_id'
+$_SESSION['user_id'] = 1;
+
+?>
+```
+
+We are using `$_SESSION` here to say that the `user_id = 1`. The `user_id` is something that we have in a database and we use it also in another file called `sign-up.php`
+
+## Working with databases
